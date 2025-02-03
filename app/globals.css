@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --synthwave-cyan: #00f5ff;
+  --synthwave-pink: #ff1493;
+  --synthwave-purple: #8a2be2;
+  --synthwave-dark: #1a1a2e;
+}
+
+* {
+  transition: background-color 0.3s ease-in-out;
+  @apply text-gray-500 dark:invert;
+}
+
+
+
+.glass-effect {
+  @apply bg-white/10 backdrop-blur-md border border-white/20;
+}
+
+.synthwave-gradient {
+  background: linear-gradient(135deg, var(--synthwave-cyan), var(--synthwave-purple), var(--synthwave-pink));
+}
+
+.grid-background {
+  background-image: linear-gradient(var(--synthwave-cyan) 1px, transparent 1px),
+    linear-gradient(90deg, var(--synthwave-cyan) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: -1px -1px;
+  opacity: 0.1;
+}
+
+/* Add these new animations after the existing CSS */
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 20px #00f5ff, 0 0 30px #00f5ff, 0 0 40px #00f5ff;
+  }
+  50% {
+    text-shadow: 0 0 10px #ff1493, 0 0 20px #ff1493, 0 0 30px #ff1493;
+  }
+}
+
+.text-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
